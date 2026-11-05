@@ -1,0 +1,27 @@
+{
+  "SDKVersion": 2,
+  "UUID": "com.seb.caffeine",
+  "Name": "Caffeine",
+  "Version": "1.0.0.0",
+  "Author": "0xSeb",
+  "Description": "Keep the Mac awake (caffeinate -di) while the key is on.",
+  "Icon": "imgs/plugin",
+  "Category": "Caffeine",
+  "CategoryIcon": "imgs/plugin",
+  "CodePath": "plugin.js",
+  "Nodejs": { "Version": "24" },
+  "OS": [{ "Platform": "mac", "MinimumVersion": "12" }],
+  "Software": { "MinimumVersion": "6.5" },
+  "Actions": [
+    {
+      "UUID": "com.seb.caffeine.toggle",
+      "Name": "Toggle",
+      "Tooltip": "Keep the Mac awake while on",
+      "Icon": "imgs/plugin",
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": false,
+      "DisableAutomaticStates": true,
+      "States": [{ "Image": "imgs/off" }, { "Image": "imgs/on" }]
+    }
+  ]
+}
