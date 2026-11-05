@@ -1,19 +1,40 @@
+<div align="center">
+
+<img src="com.seb.caffeine.sdPlugin/imgs/on@2x.png" width="96" alt="Caffeine key, on">
+
 # Caffeine for Stream Deck
 
-A Stream Deck key that keeps your Mac awake. Press it to start macOS's built-in
-`caffeinate -di` (display and system stay awake), press again to stop.
+**One key to keep your Mac awake.**
 
-| Off | On |
-|-----|----|
-| ![off](com.seb.caffeine.sdPlugin/imgs/off@2x.png) | ![on](com.seb.caffeine.sdPlugin/imgs/on@2x.png) |
+[![macOS 12+](https://img.shields.io/badge/macOS-12%2B-000000?logo=apple&logoColor=white)](#requirements)
+[![Stream Deck 6.5+](https://img.shields.io/badge/Stream%20Deck-6.5%2B-6E44FF)](#requirements)
+[![Dependencies: 0](https://img.shields.io/badge/dependencies-0-brightgreen)](com.seb.caffeine.sdPlugin/plugin.js)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-No dependencies, no permissions, about 35 lines of JavaScript. `caffeinate` is started
-with `-w <plugin pid>`, so it stops on its own if Stream Deck quits or the plugin crashes.
+</div>
+
+---
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="com.seb.caffeine.sdPlugin/imgs/off@2x.png" width="96" alt="off"><br><sub><b>Off</b> · Mac sleeps as usual</sub></td>
+    <td align="center"><img src="com.seb.caffeine.sdPlugin/imgs/on@2x.png" width="96" alt="on"><br><sub><b>On</b> · display and system stay awake</sub></td>
+  </tr>
+</table>
+
+Press the key to start macOS's built-in [`caffeinate -di`](https://ss64.com/mac/caffeinate.html). Press it again to stop it. That's all it does.
+
+## Why this one
+
+- ☕ **Built into macOS.** No third-party keep-awake app, just Apple's own `caffeinate`.
+- 🪶 **Tiny.** About 35 lines of plain JavaScript. No npm, no build step, nothing to update.
+- 🔒 **No permissions.** No Accessibility, Screen Recording or admin access.
+- 🧯 **Stops cleanly.** `caffeinate` is tied to the plugin's process, so it stops on its own if Stream Deck quits or crashes.
 
 ## Requirements
 
-- macOS 12+
-- Stream Deck app 6.5+
+- macOS 12 or later
+- Stream Deck app 6.5 or later, with any Stream Deck that has keys (tested on a Stream Deck + XL)
 
 ## Install
 
@@ -25,27 +46,32 @@ ln -s "$PWD/caffeine-streamdeck/com.seb.caffeine.sdPlugin" \
 
 Restart the Stream Deck app, then drag **Caffeine → Toggle** onto a key.
 
-## Check that it works
+## Is it working?
 
-With the key on:
+Turn the key on, then run:
 
 ```sh
 pmset -g assertions | grep -A1 caffeinate
 ```
 
-You should see `PreventUserIdleDisplaySleep` and `PreventUserIdleSystemSleep` held by a
-`caffeinate` process "on behalf of" the plugin's PID. They disappear when the key is off.
+You should see `PreventUserIdleDisplaySleep` and `PreventUserIdleSystemSleep`, held by a `caffeinate` process *on behalf of* the plugin. When you turn the key off, both lines go away.
 
-## Notes
+## Good to know
 
-- The key always starts **off** after a restart; it does not remember its last state.
-- Deleting the key while it is on leaves `caffeinate` running until the Stream Deck app restarts.
-- While on, the display never sleeps from inactivity, so a lock tied to display sleep will not trigger.
+> [!NOTE]
+> The key always starts **off** after a restart. It doesn't remember its last state.
 
-## Icons
+> [!WARNING]
+> While the key is on, the display never sleeps from inactivity, so a screen lock tied to display sleep won't trigger. If you delete the key while it's on, `caffeinate` keeps running until the Stream Deck app restarts.
 
-Rendered from SF Symbols: `swift tools/icons.swift com.seb.caffeine.sdPlugin/imgs`
+## Hacking
+
+| Path | What |
+|------|------|
+| [`com.seb.caffeine.sdPlugin/plugin.js`](com.seb.caffeine.sdPlugin/plugin.js) | The whole plugin |
+| [`com.seb.caffeine.sdPlugin/manifest.json`](com.seb.caffeine.sdPlugin/manifest.json) | Stream Deck manifest |
+| [`tools/icons.swift`](tools/icons.swift) | Draws the key images from SF Symbols: `swift tools/icons.swift com.seb.caffeine.sdPlugin/imgs` |
 
 ## License
 
-MIT
+[MIT](LICENSE) © 0xSeb
