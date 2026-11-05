@@ -88,6 +88,8 @@ streamdeck validate com.seb.caffeine.sdPlugin
 streamdeck pack com.seb.caffeine.sdPlugin -o dist
 ```
 
+To release, push a signed tag: `git tag -s v1.0.1 -m v1.0.1 && git push origin v1.0.1`. The [release workflow](.github/workflows/release.yml) validates, packs and publishes the installer.
+
 ## License
 
 [MIT](LICENSE) © 0xSeb
