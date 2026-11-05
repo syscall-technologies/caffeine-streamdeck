@@ -18,7 +18,7 @@ with `-w <plugin pid>`, so it stops on its own if Stream Deck quits or the plugi
 ## Install
 
 ```sh
-git clone https://github.com/0xSeb/caffeine-streamdeck.git
+git clone https://github.com/syscall-technologies/caffeine-streamdeck.git
 ln -s "$PWD/caffeine-streamdeck/com.seb.caffeine.sdPlugin" \
   ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/
 ```
