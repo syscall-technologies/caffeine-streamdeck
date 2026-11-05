@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="com.seb.caffeine.sdPlugin/imgs/on@2x.png" width="96" alt="Caffeine key, on">
+<img src="com.sclt.caffeine.sdPlugin/imgs/on@2x.png" width="96" alt="Caffeine key, on">
 
 # Caffeine for Stream Deck
 
@@ -8,7 +8,7 @@
 
 [![macOS 12+](https://img.shields.io/badge/macOS-12%2B-000000?logo=apple&logoColor=white)](#requirements)
 [![Stream Deck 7.1+](https://img.shields.io/badge/Stream%20Deck-7.1%2B-6E44FF)](#requirements)
-[![Dependencies: 0](https://img.shields.io/badge/dependencies-0-brightgreen)](com.seb.caffeine.sdPlugin/plugin.js)
+[![Dependencies: 0](https://img.shields.io/badge/dependencies-0-brightgreen)](com.sclt.caffeine.sdPlugin/plugin.js)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 </div>
@@ -17,8 +17,8 @@
 
 <table align="center">
   <tr>
-    <td align="center"><img src="com.seb.caffeine.sdPlugin/imgs/off@2x.png" width="96" alt="off"><br><sub><b>Off</b> · Mac sleeps as usual</sub></td>
-    <td align="center"><img src="com.seb.caffeine.sdPlugin/imgs/on@2x.png" width="96" alt="on"><br><sub><b>On</b> · display and system stay awake</sub></td>
+    <td align="center"><img src="com.sclt.caffeine.sdPlugin/imgs/off@2x.png" width="96" alt="off"><br><sub><b>Off</b> · Mac sleeps as usual</sub></td>
+    <td align="center"><img src="com.sclt.caffeine.sdPlugin/imgs/on@2x.png" width="96" alt="on"><br><sub><b>On</b> · display and system stay awake</sub></td>
   </tr>
 </table>
 
@@ -38,7 +38,7 @@ Press the key to start macOS's built-in [`caffeinate -di`](https://ss64.com/mac/
 
 ## Install
 
-**[⬇ Download Caffeine for Stream Deck](https://github.com/syscall-technologies/caffeine-streamdeck/releases/latest/download/com.seb.caffeine.streamDeckPlugin)**, then double-click the file. Stream Deck installs it for you.
+**[⬇ Download Caffeine for Stream Deck](https://github.com/syscall-technologies/caffeine-streamdeck/releases/latest/download/com.sclt.caffeine.streamDeckPlugin)**, then double-click the file. Stream Deck installs it for you.
 
 Then drag **Caffeine → Toggle** onto a key.
 
@@ -47,7 +47,7 @@ Then drag **Caffeine → Toggle** onto a key.
 
 ```sh
 git clone https://github.com/syscall-technologies/caffeine-streamdeck.git
-ln -s "$PWD/caffeine-streamdeck/com.seb.caffeine.sdPlugin" \
+ln -s "$PWD/caffeine-streamdeck/com.sclt.caffeine.sdPlugin" \
   ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/
 ```
 
@@ -77,15 +77,15 @@ You should see `PreventUserIdleDisplaySleep` and `PreventUserIdleSystemSleep`, h
 
 | Path | What |
 |------|------|
-| [`com.seb.caffeine.sdPlugin/plugin.js`](com.seb.caffeine.sdPlugin/plugin.js) | The whole plugin |
-| [`com.seb.caffeine.sdPlugin/manifest.json`](com.seb.caffeine.sdPlugin/manifest.json) | Stream Deck manifest |
-| [`tools/icons.swift`](tools/icons.swift) | Draws the key images from SF Symbols: `swift tools/icons.swift com.seb.caffeine.sdPlugin/imgs` |
+| [`com.sclt.caffeine.sdPlugin/plugin.js`](com.sclt.caffeine.sdPlugin/plugin.js) | The whole plugin |
+| [`com.sclt.caffeine.sdPlugin/manifest.json`](com.sclt.caffeine.sdPlugin/manifest.json) | Stream Deck manifest |
+| [`tools/icons.swift`](tools/icons.swift) | Draws the key images from SF Symbols: `swift tools/icons.swift com.sclt.caffeine.sdPlugin/imgs` |
 
 To build the installer, use the [Stream Deck CLI](https://docs.elgato.com/streamdeck/cli/intro) (`npm install -g @elgato/cli`):
 
 ```sh
-streamdeck validate com.seb.caffeine.sdPlugin
-streamdeck pack com.seb.caffeine.sdPlugin -o dist
+streamdeck validate com.sclt.caffeine.sdPlugin
+streamdeck pack com.sclt.caffeine.sdPlugin -o dist
 ```
 
 To release, push a signed tag: `git tag -s v1.0.1 -m v1.0.1 && git push origin v1.0.1`. The [release workflow](.github/workflows/release.yml) validates, packs and publishes the installer.

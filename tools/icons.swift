@@ -1,4 +1,4 @@
-// Renders the key images from SF Symbols: swift tools/icons.swift com.seb.caffeine.sdPlugin/imgs
+// Renders the key images from SF Symbols: swift tools/icons.swift com.sclt.caffeine.sdPlugin/imgs
 import AppKit
 let out = CommandLine.arguments[1]
 func render(_ name: String, _ size: CGFloat, symbol: String = "cup.and.saucer.fill", bg: NSColor?, fg: NSColor) {

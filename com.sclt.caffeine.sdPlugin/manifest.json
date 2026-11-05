@@ -1,6 +1,6 @@
 {
   "SDKVersion": 2,
-  "UUID": "com.seb.caffeine",
+  "UUID": "com.sclt.caffeine",
   "Name": "Caffeine",
   "Version": "1.0.0.0",
   "Author": "0xSeb",
@@ -23,7 +23,7 @@
   },
   "Actions": [
     {
-      "UUID": "com.seb.caffeine.toggle",
+      "UUID": "com.sclt.caffeine.toggle",
       "Name": "Toggle",
       "Tooltip": "Keep the Mac awake while on",
       "Icon": "imgs/action",
