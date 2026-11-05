@@ -16,5 +16,7 @@ func render(_ name: String, _ size: CGFloat, symbol: String = "cup.and.saucer.fi
 for (suffix, scale) in [("", 1.0), ("@2x", 2.0)] {
   render("on\(suffix)", 72 * scale, symbol: "cup.and.heat.waves.fill", bg: NSColor(red: 0.85, green: 0.5, blue: 0.1, alpha: 1), fg: .white)
   render("off\(suffix)", 72 * scale, bg: NSColor(white: 0.13, alpha: 1), fg: NSColor(white: 0.45, alpha: 1))
-  render("plugin\(suffix)", 28 * scale, bg: nil, fg: .white)
+  render("plugin\(suffix)", 256 * scale, symbol: "cup.and.heat.waves.fill", bg: NSColor(red: 0.85, green: 0.5, blue: 0.1, alpha: 1), fg: .white)
+  render("category\(suffix)", 28 * scale, bg: nil, fg: .white)
+  render("action\(suffix)", 20 * scale, bg: nil, fg: .white)
 }

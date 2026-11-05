@@ -7,21 +7,39 @@
   "Description": "Keep the Mac awake (caffeinate -di) while the key is on.",
   "Icon": "imgs/plugin",
   "Category": "Caffeine",
-  "CategoryIcon": "imgs/plugin",
+  "CategoryIcon": "imgs/category",
   "CodePath": "plugin.js",
-  "Nodejs": { "Version": "24" },
-  "OS": [{ "Platform": "mac", "MinimumVersion": "12" }],
-  "Software": { "MinimumVersion": "6.5" },
+  "Nodejs": {
+    "Version": "24"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
   "Actions": [
     {
       "UUID": "com.seb.caffeine.toggle",
       "Name": "Toggle",
       "Tooltip": "Keep the Mac awake while on",
-      "Icon": "imgs/plugin",
-      "Controllers": ["Keypad"],
+      "Icon": "imgs/action",
+      "Controllers": [
+        "Keypad"
+      ],
       "SupportedInMultiActions": false,
       "DisableAutomaticStates": true,
-      "States": [{ "Image": "imgs/off" }, { "Image": "imgs/on" }]
+      "States": [
+        {
+          "Image": "imgs/off"
+        },
+        {
+          "Image": "imgs/on"
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,7 @@
 **One key to keep your Mac awake.**
 
 [![macOS 12+](https://img.shields.io/badge/macOS-12%2B-000000?logo=apple&logoColor=white)](#requirements)
-[![Stream Deck 6.5+](https://img.shields.io/badge/Stream%20Deck-6.5%2B-6E44FF)](#requirements)
+[![Stream Deck 7.1+](https://img.shields.io/badge/Stream%20Deck-7.1%2B-6E44FF)](#requirements)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-brightgreen)](com.seb.caffeine.sdPlugin/plugin.js)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
@@ -34,9 +34,16 @@ Press the key to start macOS's built-in [`caffeinate -di`](https://ss64.com/mac/
 ## Requirements
 
 - macOS 12 or later
-- Stream Deck app 6.5 or later, with any Stream Deck that has keys (tested on a Stream Deck + XL)
+- Stream Deck app 7.1 or later, with any Stream Deck that has keys (tested on a Stream Deck + XL)
 
 ## Install
+
+**[⬇ Download Caffeine for Stream Deck](https://github.com/syscall-technologies/caffeine-streamdeck/releases/latest/download/com.seb.caffeine.streamDeckPlugin)**, then double-click the file. Stream Deck installs it for you.
+
+Then drag **Caffeine → Toggle** onto a key.
+
+<details>
+<summary>Install from source instead</summary>
 
 ```sh
 git clone https://github.com/syscall-technologies/caffeine-streamdeck.git
@@ -45,6 +52,8 @@ ln -s "$PWD/caffeine-streamdeck/com.seb.caffeine.sdPlugin" \
 ```
 
 Restart the Stream Deck app, then drag **Caffeine → Toggle** onto a key.
+
+</details>
 
 ## Is it working?
 
@@ -71,6 +80,13 @@ You should see `PreventUserIdleDisplaySleep` and `PreventUserIdleSystemSleep`, h
 | [`com.seb.caffeine.sdPlugin/plugin.js`](com.seb.caffeine.sdPlugin/plugin.js) | The whole plugin |
 | [`com.seb.caffeine.sdPlugin/manifest.json`](com.seb.caffeine.sdPlugin/manifest.json) | Stream Deck manifest |
 | [`tools/icons.swift`](tools/icons.swift) | Draws the key images from SF Symbols: `swift tools/icons.swift com.seb.caffeine.sdPlugin/imgs` |
+
+To build the installer, use the [Stream Deck CLI](https://docs.elgato.com/streamdeck/cli/intro) (`npm install -g @elgato/cli`):
+
+```sh
+streamdeck validate com.seb.caffeine.sdPlugin
+streamdeck pack com.seb.caffeine.sdPlugin -o dist
+```
 
 ## License
 
